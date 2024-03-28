@@ -10,9 +10,8 @@ environment
 
   async function prepareApp() {
     if (isDevMode()) {
-      console.log('isDev')
-      // const { worker } = await import('./mocks/browser')
-      // return await worker.start()
+      const { worker } = await import('./mocks/browser')
+      return await worker.start()
     }
 
     return Promise.resolve()
